@@ -37,7 +37,7 @@ public class Cadastro implements ActionListener {
             String email = this.email.getText();
             String senha = new String(this.senha.getPassword());
             String confirmaSenha = new String(this.confirmaSenha.getPassword());
-            if(cpf.equals("") || nome.equals("") || telefone.equals("") || cargo.equals("") || email.equals("") || senha.equals("") || confirmaSenha.equals(""))
+            if(cpf.trim().equals("") || nome.equals("") || telefone.trim().equals("") || cargo.equals("") || email.equals("") || senha.equals("") || confirmaSenha.equals(""))
                 throw new Exception("Todos os campos devem ser preenchidos!");
             else if(!senha.equals(confirmaSenha))
                 throw new Exception("As senhas digitadas não são iguais!");

@@ -1,6 +1,7 @@
 package Model;
 
 public class Flor{
+    private static int lastCodigo = 0;
     private int codigo;
     private String nome;
     private int qtdEmEstoque;
@@ -9,13 +10,14 @@ public class Flor{
     private Fornecedor fornecedor;
 
 
-    public Flor(int codigo, String nome, int qtdEmEstoque, String cor, float valorIndividual,Fornecedor fornecedor) {
-        this.codigo = codigo;
+    public Flor(String nome, int qtdEmEstoque, String cor, float valorIndividual,Fornecedor fornecedor) {
+        this.codigo = lastCodigo++;
         this.nome = nome;
         this.qtdEmEstoque = qtdEmEstoque;
         this.cor = cor;
         this.valorIndividual = valorIndividual;
         this.fornecedor = fornecedor;
+
     }
 
     public Fornecedor getFornecedor() {
@@ -28,10 +30,6 @@ public class Flor{
 
     public int getCodigo() {
         return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
     }
 
     public String getNome() {
@@ -70,5 +68,10 @@ public class Flor{
     }
     public void diminuiEstoque(){
         this.qtdEmEstoque--;
+    }
+
+    @Override
+    public String toString() {
+        return this.codigo+" - "+this.nome;
     }
 }

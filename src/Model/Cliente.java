@@ -18,5 +18,8 @@ public class Cliente extends Pessoa {
         this.profissao = profissao;
     }
 
-
+    @Override
+    public String toString() {
+        return this.getCpf()+" - "+this.getNome();
+    }
 }

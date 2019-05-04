@@ -32,9 +32,9 @@ public class GenericCRUDListController {
         } else if (clazz == Compra.class) {
 
         } else if (clazz == Cliente.class) {
-
+            crud.setContentPane(new View.CreateUpdate.Cliente().getPanel());
         } else if (clazz == Flor.class) {
-
+            crud.setContentPane(new View.CreateUpdate.Flor().getPanel());
         } else if (clazz == Funcionario.class) {
 
         }
@@ -50,9 +50,9 @@ public class GenericCRUDListController {
         } else if (o instanceof Compra) {
 
         } else if (o instanceof Cliente) {
-
+            crud.setContentPane(new View.CreateUpdate.Cliente((Cliente) o).getPanel());
         } else if (o instanceof Flor) {
-
+            crud.setContentPane(new View.CreateUpdate.Flor((Flor) o).getPanel());
         } else if (o instanceof Funcionario) {
 
         }
