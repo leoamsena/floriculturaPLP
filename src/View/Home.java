@@ -19,6 +19,8 @@ public class Home implements ActionListener {
     private JButton clientesButton;
     private JButton fornecedoresButton;
     private JButton comprasButton;
+    private JButton saveBtn;
+    private JButton loadBtn;
 
 
     public JDialog getDialog(){
@@ -34,6 +36,10 @@ public class Home implements ActionListener {
             HomeController.openGenericCRUD( (MainController.getClientes()), Cliente.class);
         }else if(e.getSource() == this.floresButton){
             HomeController.openGenericCRUD( (MainController.getFlores()), Flor.class);
+        }else if(e.getSource() == this.saveBtn){
+            MainController.save();
+        }else if(e.getSource() == this.loadBtn){
+            MainController.load();
         }
 
     }
