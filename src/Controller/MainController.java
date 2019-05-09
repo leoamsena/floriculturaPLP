@@ -5,8 +5,10 @@ import View.Cadastro;
 import View.Home;
 import View.Main;
 
+import javax.management.modelmbean.ModelMBean;
 import javax.swing.*;
 import java.awt.*;
+import java.io.*;
 import java.util.ArrayList;
 
 public class  MainController {
@@ -97,4 +99,59 @@ public class  MainController {
         cadastro.setSize(new Dimension(500,500));
         cadastro.setVisible(true);
     }
+
+    private static void saveToFile(ArrayList array, String name){
+        try{
+            FileOutputStream fos = new FileOutputStream(name+".srda");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(array);
+            oos.close();
+            fos.close();
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        } catch (IOException e) {
+            System.out.println("Error initializing stream");
+        }
+    }
+
+    public static void save(){
+        saveToFile(funcionarios, "funcionarios");
+        saveToFile(compras, "compras");
+        saveToFile(fornecedores, "fornecedores");
+        saveToFile(clientes, "clientes");
+        saveToFile(flores, "flores");
+    }
+
+
+    private static Object loadFromFile(String name){
+        try{
+            FileInputStream fis = new FileInputStream(name+".srda");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            Object res = ois.readObject();
+            ois.close();
+
+            return res;
+        }catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        } catch (IOException e) {
+            System.out.println("Error initializing stream");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static void load(){
+        try {
+            funcionarios = (ArrayList<Funcionario>) loadFromFile("funcionarios");
+            compras = (ArrayList<Compra>) loadFromFile("compras");
+            fornecedores = (ArrayList<Fornecedor>) loadFromFile("fornecedor");
+            clientes = (ArrayList<Cliente>) loadFromFile("clientes");
+            flores = (ArrayList<Flor>) loadFromFile("flores");
+        }catch (ClassCastException e){
+            System.out.println("Class cast error");
+        }
+    }
+
 }
