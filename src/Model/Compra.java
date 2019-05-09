@@ -1,8 +1,9 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Compra{
+public class Compra  implements Serializable {
     private float valorTotal;
     private Cliente cliente;
     private static ArrayList<Flor> flores;
