@@ -5,11 +5,22 @@ import java.util.ArrayList;
 public class Compra{
     private float valorTotal;
     private Cliente cliente;
-    private static ArrayList<Flor> flores;
+    private ArrayList<Flor> flores;
+    private Funcionario funcionario;
 
-    public Compra(float valorTotal, Cliente cliente) {
+    public Compra(float valorTotal, Cliente cliente, ArrayList<Flor> flores,Funcionario funcionario) {
         this.valorTotal = valorTotal;
         this.cliente = cliente;
+        this.flores = flores;
+        this.funcionario = funcionario;
+    }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
     }
 
     public float getValorTotal() {
@@ -28,11 +39,11 @@ public class Compra{
         this.cliente = cliente;
     }
 
-    public static ArrayList<Flor> getFlores() {
-        return flores;
+    public ArrayList<Flor> getFlores() {
+        return this.flores;
     }
 
-    public static void setFlores(ArrayList<Flor> flores) {
-        Compra.flores = flores;
+    public void setFlores(ArrayList<Flor> flores) {
+        this.flores = flores;
     }
 }
