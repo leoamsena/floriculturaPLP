@@ -1,6 +1,8 @@
 package Model;
 
-public class Flor{
+import java.io.Serializable;
+
+public class Flor implements Serializable {
     private static int lastCodigo = 0;
     private int codigo;
     private String nome;
