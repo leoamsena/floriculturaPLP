@@ -3,7 +3,7 @@ package Model;
 import java.io.Serializable;
 
 public class Flor implements Serializable {
-    private static int lastCodigo = 0;
+    private static int lastCodigo = 1;
     private int codigo;
     private String nome;
     private int qtdEmEstoque;

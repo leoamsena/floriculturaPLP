@@ -30,7 +30,7 @@ public class GenericCRUDListController {
         if (clazz == Fornecedor.class) {
             crud.setContentPane(new View.CreateUpdate.Fornecedor().getPanel());
         } else if (clazz == Compra.class) {
-
+            crud.setContentPane(new View.CreateUpdate.Compra().getPanel());
         } else if (clazz == Cliente.class) {
             crud.setContentPane(new View.CreateUpdate.Cliente().getPanel());
         } else if (clazz == Flor.class) {
@@ -48,7 +48,7 @@ public class GenericCRUDListController {
         if (o instanceof Fornecedor) {
             crud.setContentPane(new View.CreateUpdate.Fornecedor((Fornecedor) o).getPanel());
         } else if (o instanceof Compra) {
-
+            crud.setContentPane(new View.CreateUpdate.Compra((Compra) o).getPanel());
         } else if (o instanceof Cliente) {
             crud.setContentPane(new View.CreateUpdate.Cliente((Cliente) o).getPanel());
         } else if (o instanceof Flor) {

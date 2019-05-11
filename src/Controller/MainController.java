@@ -9,6 +9,8 @@ import javax.management.modelmbean.ModelMBean;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class  MainController {
@@ -18,6 +20,7 @@ public class  MainController {
     private static ArrayList<Fornecedor> fornecedores = new ArrayList<>();
     private static ArrayList<Cliente> clientes = new ArrayList<>();
     private static ArrayList<Flor> flores = new ArrayList<>();
+    private static Funcionario usuarioLogado;
 
     public static ArrayList<Cliente> getClientes() {
         return clientes;
@@ -31,7 +34,7 @@ public class  MainController {
         return usuarioLogado;
     }
 
-    private static Funcionario usuarioLogado;
+
 
     public static ArrayList<Fornecedor> getFornecedores() {
         return fornecedores;
@@ -100,22 +103,18 @@ public class  MainController {
         cadastro.setVisible(true);
     }
 
-    private static void saveToFile(ArrayList array, String name){
-        try{
-            FileOutputStream fos = new FileOutputStream(name+".srda");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(array);
-            oos.close();
-            fos.close();
-        }
-        catch (FileNotFoundException e) {
-            System.out.println("File not found");
-        } catch (IOException e) {
-            System.out.println("Error initializing stream");
-        }
+    private static void saveToFile(ArrayList array, String name) throws Exception{
+        File f = new File("arqs");
+        if(!f.exists() && !f.mkdirs())
+            throw new Exception("Erro ao criar pasta!");
+        FileOutputStream fos = new FileOutputStream("arqs/"+name+".srda");
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(array);
+        oos.close();
+        fos.close();
     }
 
-    public static void save(){
+    public static void save() throws Exception{
         saveToFile(funcionarios, "funcionarios");
         saveToFile(compras, "compras");
         saveToFile(fornecedores, "fornecedores");
@@ -124,29 +123,21 @@ public class  MainController {
     }
 
 
-    private static Object loadFromFile(String name){
-        try{
-            FileInputStream fis = new FileInputStream(name+".srda");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            Object res = ois.readObject();
-            ois.close();
+    private static Object loadFromFile(String name) throws Exception{
 
-            return res;
-        }catch (FileNotFoundException e) {
-            System.out.println("File not found");
-        } catch (IOException e) {
-            System.out.println("Error initializing stream");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return null;
+        FileInputStream fis = new FileInputStream("arqs/"+name+".srda");
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        Object res = ois.readObject();
+        ois.close();
+
+        return res;
     }
 
-    public static void load(){
+    public static void load() throws Exception{
         try {
             funcionarios = (ArrayList<Funcionario>) loadFromFile("funcionarios");
             compras = (ArrayList<Compra>) loadFromFile("compras");
-            fornecedores = (ArrayList<Fornecedor>) loadFromFile("fornecedor");
+            fornecedores = (ArrayList<Fornecedor>) loadFromFile("fornecedores");
             clientes = (ArrayList<Cliente>) loadFromFile("clientes");
             flores = (ArrayList<Flor>) loadFromFile("flores");
         }catch (ClassCastException e){

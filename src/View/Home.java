@@ -28,18 +28,24 @@ public class Home implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == this.comprasButton){
-            HomeController.openGenericCRUD( (MainController.getCompras()) ,Compra.class);
-        }else if(e.getSource() == this.fornecedoresButton){
-            HomeController.openGenericCRUD( (MainController.getFornecedores()), Fornecedor.class);
-        }else if(e.getSource() == this.clientesButton){
-            HomeController.openGenericCRUD( (MainController.getClientes()), Cliente.class);
-        }else if(e.getSource() == this.floresButton){
-            HomeController.openGenericCRUD( (MainController.getFlores()), Flor.class);
-        }else if(e.getSource() == this.saveBtn){
-            MainController.save();
-        }else if(e.getSource() == this.loadBtn){
-            MainController.load();
+        try {
+            if (e.getSource() == this.comprasButton) {
+                HomeController.openGenericCRUD((MainController.getCompras()), Compra.class);
+            } else if (e.getSource() == this.fornecedoresButton) {
+                HomeController.openGenericCRUD((MainController.getFornecedores()), Fornecedor.class);
+            } else if (e.getSource() == this.clientesButton) {
+                HomeController.openGenericCRUD((MainController.getClientes()), Cliente.class);
+            } else if (e.getSource() == this.floresButton) {
+                HomeController.openGenericCRUD((MainController.getFlores()), Flor.class);
+            } else if (e.getSource() == this.saveBtn) {
+                MainController.save();
+                JOptionPane.showMessageDialog(this.panel,"Salvo com sucesso!");
+            } else if (e.getSource() == this.loadBtn) {
+                MainController.load();
+                JOptionPane.showMessageDialog(this.panel,"Carregado com sucesso!");
+            }
+        }catch (Exception ex){
+            JOptionPane.showMessageDialog(this.panel,ex.getMessage());
         }
 
     }
@@ -53,5 +59,7 @@ public class Home implements ActionListener {
         this.floresButton.addActionListener(this);
         this.clientesButton.addActionListener(this);
         this.fornecedoresButton.addActionListener(this);
+        this.saveBtn.addActionListener(this);
+        this.loadBtn.addActionListener(this);
     }
 }
