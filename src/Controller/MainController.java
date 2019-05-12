@@ -88,9 +88,11 @@ public class  MainController {
         frame.setResizable(false);
         frame.setVisible(true);
         // CADASTRO PARA TESTE
+        /*
         funcionarios.add(new Funcionario("1111", "1", "1", "1", "1", "1"));
         fornecedores.add(new Fornecedor("111","nome"));
         fornecedores.add(new Fornecedor("222","nome aa"));
+        */
     }
 
 
