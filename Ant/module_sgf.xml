@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_sgf" default="compile.module.sgf">
+  <dirname property="module.sgf.basedir" file="${ant.file.module_sgf}"/>
+  
+  <property name="module.jdk.home.sgf" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.sgf" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.sgf" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.sgf" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="sgf.output.dir" value="${module.sgf.basedir}/out/production/SGF"/>
+  <property name="sgf.testoutput.dir" value="${module.sgf.basedir}/out/test/SGF"/>
+  
+  <path id="sgf.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="sgf.module.production.classpath">
+    <path refid="${module.jdk.classpath.sgf}"/>
+  </path>
+  
+  <path id="sgf.runtime.production.module.classpath">
+    <pathelement location="${sgf.output.dir}"/>
+  </path>
+  
+  <path id="sgf.module.classpath">
+    <path refid="${module.jdk.classpath.sgf}"/>
+    <pathelement location="${sgf.output.dir}"/>
+  </path>
+  
+  <path id="sgf.runtime.module.classpath">
+    <pathelement location="${sgf.testoutput.dir}"/>
+    <pathelement location="${sgf.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.sgf">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.sgf">
+    <patternset refid="excluded.from.module.sgf"/>
+  </patternset>
+  
+  <path id="sgf.module.sourcepath">
+    <dirset dir="${module.sgf.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.sgf" depends="compile.module.sgf.production,compile.module.sgf.tests" description="Compile module SGF"/>
+  
+  <target name="compile.module.sgf.production" depends="register.custom.compilers" description="Compile module SGF; production classes">
+    <mkdir dir="${sgf.output.dir}"/>
+    <javac2 destdir="${sgf.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.sgf}/javac">
+      <compilerarg line="${compiler.args.sgf}"/>
+      <bootclasspath refid="sgf.module.bootclasspath"/>
+      <classpath refid="sgf.module.production.classpath"/>
+      <src refid="sgf.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.sgf"/>
+    </javac2>
+    
+    <copy todir="${sgf.output.dir}">
+      <fileset dir="${module.sgf.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.sgf.tests" depends="register.custom.compilers,compile.module.sgf.production" description="compile module SGF; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.sgf" description="cleanup module">
+    <delete dir="${sgf.output.dir}"/>
+    <delete dir="${sgf.testoutput.dir}"/>
+  </target>
+</project>
