@@ -32,7 +32,6 @@
     <exclude name="**/vssver2.scc/**"/>
   </patternset>
   <patternset id="library.patterns">
-    <include name="*.klib"/>
     <include name="*.egg"/>
     <include name="*.jar"/>
     <include name="*.ear"/>
@@ -57,6 +56,9 @@
   
   <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
   <path id="jdk.classpath.1.8">
+    <fileset dir="src/libs">
+      <include name="forms_rt.jar"/>
+    </fileset>
     <fileset dir="${jdk.home.1.8}">
       <include name="jre/lib/charsets.jar"/>
       <include name="jre/lib/deploy.jar"/>
@@ -87,20 +89,6 @@
   <property name="project.jdk.home" value="${jdk.home.1.8}"/>
   <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
   <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
-  <!-- Register Custom Compiler Taskdefs -->
-  <property name="javac2.home" value="${idea.home}/lib"/>
-  <path id="javac2.classpath">
-    <fileset dir="${javac2.home}">
-      <include name="javac2.jar"/>
-      <include name="jdom.jar"/>
-      <include name="asm-all*.jar"/>
-      <include name="forms-*.jar"/>
-    </fileset>
-  </path>
-  <target name="register.custom.compilers">
-    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
-    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
-  </target>
   
   <!-- Modules -->
   
@@ -157,17 +145,17 @@
   </path>
   
   
-  <target name="compile.module.sgf" depends="compile.module.sgf.production,compile.module.sgf.tests" description="Compile module SGF"/>
+  <target name="compile.module.sgf" depends="compile.module.sgf.production, unjar_dependencies, compile.module.sgf.tests" description="Compile module SGF"/>
   
-  <target name="compile.module.sgf.production" depends="register.custom.compilers" description="Compile module SGF; production classes">
+  <target name="compile.module.sgf.production" description="Compile module SGF; production classes">
     <mkdir dir="${sgf.output.dir}"/>
-    <javac2 destdir="${sgf.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.sgf}/javac">
+    <javac destdir="${sgf.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.sgf}/javac">
       <compilerarg line="${compiler.args.sgf}"/>
       <bootclasspath refid="sgf.module.bootclasspath"/>
       <classpath refid="sgf.module.production.classpath"/>
       <src refid="sgf.module.sourcepath"/>
       <patternset refid="excluded.from.compilation.sgf"/>
-    </javac2>
+    </javac>
     
     <copy todir="${sgf.output.dir}">
       <fileset dir="${module.sgf.basedir}/src">
@@ -176,8 +164,16 @@
       </fileset>
     </copy>
   </target>
+
+  <target name="unjar_dependencies" depends="clean">
+    <unzip dest="${sgf.output.dir}">
+      <fileset dir="src/libs">
+        <include name="**/*.jar" />
+      </fileset>
+    </unzip>
+  </target>
   
-  <target name="compile.module.sgf.tests" depends="register.custom.compilers,compile.module.sgf.production" description="compile module SGF; test classes" unless="skip.tests"/>
+  <target name="compile.module.sgf.tests" depends="compile.module.sgf.production" description="compile module SGF; test classes" unless="skip.tests"/>
   
   <target name="clean.module.sgf" description="cleanup module">
     <delete dir="${sgf.output.dir}"/>
@@ -199,10 +195,10 @@
     <property name="temp.jar.path.SGF.jar" value="${artifacts.temp.dir}/SGF.jar"/>
   </target>
   
-  <target name="artifact.sgf:jar" depends="init.artifacts, compile.module.sgf" description="Build &#39;SGF:jar&#39; artifact">
+  <target name="artifact.sgf:jar" depends="init.artifacts, compile.module.sgf, unjar_dependencies" description="Build &#39;SGF:jar&#39; artifact">
     <property name="artifact.temp.output.sgf:jar" value="${artifacts.temp.dir}/SGF_jar"/>
     <mkdir dir="${artifact.temp.output.sgf:jar}"/>
-    <jar destfile="${temp.jar.path.SGF.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+    <jar destfile="${temp.jar.path.SGF.jar}" duplicate="preserve" manifest="${module.sgf.basedir}/src/META-INF/MANIFEST.MF">
       <zipfileset dir="${sgf.output.dir}"/>
     </jar>
     <copy file="${temp.jar.path.SGF.jar}" tofile="${artifact.temp.output.sgf:jar}/SGF.jar"/>
@@ -219,4 +215,9 @@
   </target>
   
   <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+
+  <!-- UNZIP LIB
+  <unzip src="src/libs/forms_rt.jar" dest="${sgf.output.dir}"/>
+  -->
+
 </project>
