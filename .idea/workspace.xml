@@ -8,26 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="de282a43-3040-472c-b580-46b189b10c75" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/SGF_jar/SGF.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SGF_jar/SGF.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/SGF_jar/arqs/clientes.srda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/SGF_jar/arqs/compras.srda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/SGF_jar/arqs/flores.srda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/SGF_jar/arqs/fornecedores.srda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/SGF_jar/arqs/funcionarios.srda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SGF/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SGF/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/SGF/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/SGF/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/SGF/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/SGF/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/SGF/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/SGF/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/SGF/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/SGF/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/SGF/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/SGF/com/intellij/uiDesigner/core/Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/SGF/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sgf.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sgf.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sgf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sgf.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,8 +22,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sgf.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+            <state>
+              <caret column="48" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="386">
+                <caret line="47" selection-start-line="47" selection-end-line="47" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -55,7 +48,6 @@
               <folding>
                 <element signature="e#789#790#0" expanded="true" />
                 <element signature="e#817#818#0" expanded="true" />
-                <element signature="method#$$$setupUI$$$#0;class#Cadastro#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -66,9 +58,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1241">
               <caret line="82" column="38" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
-              <folding>
-                <element signature="method#$$$setupUI$$$#0;class#Flor#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -78,9 +67,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
               <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-              <folding>
-                <element signature="method#$$$setupUI$$$#0;class#Cliente#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -90,18 +76,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sgf.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="200" column="111" selection-start-line="200" selection-start-column="111" selection-end-line="200" selection-end-column="111" />
-              <folding>
-                <element signature="e#1321#1669#0" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -207,12 +181,13 @@
         <option value="$PROJECT_DIR$/src/View/CreateUpdate/Compra.java" />
         <option value="$PROJECT_DIR$/src/Controller/MainController.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/sgf.properties" />
         <option value="$PROJECT_DIR$/src/View/CreateUpdate/Fornecedor.java" />
         <option value="$PROJECT_DIR$/src/View/Cadastro.java" />
         <option value="$PROJECT_DIR$/src/View/CreateUpdate/Flor.java" />
         <option value="$PROJECT_DIR$/src/View/CreateUpdate/Cliente.java" />
         <option value="$PROJECT_DIR$/sgf.xml" />
+        <option value="$PROJECT_DIR$/sgf.properties" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -223,10 +198,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -241,23 +215,12 @@
               <item name="SGF" type="b2602c69:ProjectViewProjectNode" />
               <item name="SGF" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="SGF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SGF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SGF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SGF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -272,7 +235,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="280" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559613907243" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560633407151" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/floriculturaPLP-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -368,11 +331,12 @@
       <workItem from="1559748997282" duration="75000" />
       <workItem from="1560560101777" duration="2242000" />
       <workItem from="1560568607896" duration="4517000" />
+      <workItem from="1560630484828" duration="2885000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95442000" />
+    <option name="totallyTimeSpent" value="98327000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -385,9 +349,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24281392" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24659607" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -403,7 +366,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32786885" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49723756" visible="true" weight="0.45081967" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49723756" visible="true" weight="0.22950819" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50276244" side_tool="true" weight="0.16639073" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49546143" weight="0.3295082" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
@@ -454,17 +417,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="ant-line">
-          <url>file://$PROJECT_DIR$/sgf.xml</url>
-          <line>219</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -610,10 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1598">
           <caret line="106" column="29" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#$$$setupUI$$$#0;class#GenericCRUDList#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -621,9 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
           <caret line="72" column="94" selection-start-line="72" selection-start-column="78" selection-end-line="72" selection-end-column="94" />
-          <folding>
-            <element signature="method#$$$setupUI$$$#0;class#Fornecedor#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -634,7 +579,6 @@
           <folding>
             <element signature="e#789#790#0" expanded="true" />
             <element signature="e#817#818#0" expanded="true" />
-            <element signature="method#$$$setupUI$$$#0;class#Cadastro#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -643,9 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1241">
           <caret line="82" column="38" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
-          <folding>
-            <element signature="method#$$$setupUI$$$#0;class#Flor#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -653,16 +594,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-          <folding>
-            <element signature="method#$$$setupUI$$$#0;class#Cliente#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/SGF.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+        <state relative-caret-position="102">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -683,34 +628,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SGF.iml">
+    <entry file="file://$PROJECT_DIR$/sgf.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        <state relative-caret-position="120">
+          <caret line="218" column="16" selection-start-line="218" selection-start-column="16" selection-end-line="218" selection-end-column="16" />
+          <folding>
+            <element signature="e#1321#1669#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="17">
+          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sgf.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        <state>
+          <caret column="48" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sgf.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="200" column="111" selection-start-line="200" selection-start-column="111" selection-end-line="200" selection-end-column="111" />
-          <folding>
-            <element signature="e#1321#1669#0" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="386">
+            <caret line="47" selection-start-line="47" selection-end-line="47" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
