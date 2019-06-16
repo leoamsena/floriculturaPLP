@@ -2,10 +2,7 @@ package View;
 
 import Controller.HomeController;
 import Controller.MainController;
-import Model.Cliente;
-import Model.Compra;
-import Model.Flor;
-import Model.Fornecedor;
+import Model.*;
 
 import javax.swing.*;
 import java.awt.*;

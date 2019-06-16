@@ -2,15 +2,17 @@ package View.CreateUpdate;
 
 import Controller.HomeController;
 import Controller.MainController;
+import Model.Estoque;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class Flor implements ActionListener {
-    private Model.Flor flor;
+    private Model.Estoque estoque;
     private JTextField nome;
     private JTextField qtd;
     private JPanel panel;
@@ -37,14 +39,16 @@ public class Flor implements ActionListener {
                     throw new Exception("Quantidade e/ou valor não pode(m) ser negativo(s)!");
                 if (nome.equals("") || cor.equals(""))
                     throw new Exception("Todos os campos devem ser preenchidos!");
-                if (this.flor != null) { // editar
-                    this.flor.setNome(nome);
-                    this.flor.setCor(cor);
-                    this.flor.setFornecedor(fornecedor);
-                    this.flor.setQtdEmEstoque(qtd);
-                    this.flor.setValorIndividual(valor);
+                if (this.estoque != null) { // editar
+                    this.estoque.getFlor().setNome(nome);
+                    this.estoque.getFlor().setCor(cor);
+                    this.estoque.getFlor().setFornecedor(fornecedor);
+                    this.estoque.getFlor().setValorIndividual(valor);
+                    this.estoque.setQtdEmEstoque(qtd);
                 } else { //criar
-                    MainController.addToArrayList(new Model.Flor(nome, qtd, cor, valor, fornecedor));
+                    Model.Flor f = new Model.Flor(nome, cor, valor, fornecedor);
+                    MainController.addToArrayList(f);
+                    MainController.addToArrayList(new Model.Estoque(f, qtd));
                 }
                 JOptionPane.showMessageDialog(this.panel, "Criado/editado com sucesso!!!");
                 (HomeController.genericCRUDList).refreshPainelComponents();
@@ -70,13 +74,18 @@ public class Flor implements ActionListener {
         $$$setupUI$$$();
         this.enviarButton.addActionListener(this);
         this.cancelarButton.addActionListener(this);
-        this.flor = flor;
 
-        this.nome.setText(flor.getNome());
-        this.qtd.setText(Integer.toString(flor.getQtdEmEstoque()));
-        this.cor.setText(flor.getCor());
-        this.valor.setText(Float.toString(flor.getValorIndividual()));
-        this.fornecedor.setSelectedItem(flor.getFornecedor());
+        ArrayList<Estoque> alEstoque = MainController.getEstoques();
+        for(int i=0;i< alEstoque.size();i++) {
+            Estoque temp = alEstoque.get(i);
+            if (temp.getFlor().getCodigo() == flor.getCodigo()) this.estoque = temp;
+        }
+
+        this.nome.setText(estoque.getFlor().getNome());
+        this.qtd.setText(Integer.toString(estoque.getQtdEmEstoque()));
+        this.cor.setText(estoque.getFlor().getCor());
+        this.valor.setText(Float.toString(estoque.getFlor().getValorIndividual()));
+        this.fornecedor.setSelectedItem(estoque.getFlor().getFornecedor());
 
     }
 

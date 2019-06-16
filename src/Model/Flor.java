@@ -6,16 +6,14 @@ public class Flor implements Serializable {
     private static int lastCodigo = 1;
     private int codigo;
     private String nome;
-    private int qtdEmEstoque;
     private String cor;
     private float valorIndividual;
     private Fornecedor fornecedor;
 
 
-    public Flor(String nome, int qtdEmEstoque, String cor, float valorIndividual,Fornecedor fornecedor) {
+    public Flor(String nome, String cor, float valorIndividual, Fornecedor fornecedor) {
         this.codigo = lastCodigo++;
         this.nome = nome;
-        this.qtdEmEstoque = qtdEmEstoque;
         this.cor = cor;
         this.valorIndividual = valorIndividual;
         this.fornecedor = fornecedor;
@@ -42,14 +40,6 @@ public class Flor implements Serializable {
         this.nome = nome;
     }
 
-    public int getQtdEmEstoque() {
-        return qtdEmEstoque;
-    }
-
-    public void setQtdEmEstoque(int qtdEmEstoque) {
-        this.qtdEmEstoque = qtdEmEstoque;
-    }
-
     public String getCor() {
         return cor;
     }
@@ -65,12 +55,7 @@ public class Flor implements Serializable {
     public void setValorIndividual(float valorIndividual) {
         this.valorIndividual = valorIndividual;
     }
-    public void diminuiEstoque(int qtd){
-        this.qtdEmEstoque -= qtd;
-    }
-    public void diminuiEstoque(){
-        this.qtdEmEstoque--;
-    }
+
 
     @Override
     public String toString() {

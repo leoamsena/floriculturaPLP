@@ -5,6 +5,7 @@ import View.GenericCRUDList;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class GenericCRUDListController {
     private static JDialog crud;
@@ -16,7 +17,13 @@ public class GenericCRUDListController {
         }else if(o instanceof Cliente){
             MainController.getClientes().remove(o);
         }else if(o instanceof Flor){
-            MainController.getFlores().remove(o);
+            Estoque aux = null;
+            ArrayList<Estoque> alEstoque = MainController.getEstoques();
+            for(int i=0;i< alEstoque.size();i++){
+                Estoque temp = alEstoque.get(i);
+                if(temp.getFlor().equals(o)) aux = temp;
+            }
+            MainController.getEstoques().remove(aux);
         }else if(o instanceof Funcionario){
             MainController.getFuncionarios().remove(o);
         }

@@ -20,6 +20,7 @@ public class  MainController {
     private static ArrayList<Fornecedor> fornecedores = new ArrayList<>();
     private static ArrayList<Cliente> clientes = new ArrayList<>();
     private static ArrayList<Flor> flores = new ArrayList<>();
+    private static ArrayList<Estoque> estoques = new ArrayList<>();
     private static Funcionario usuarioLogado;
 
     public static ArrayList<Cliente> getClientes() {
@@ -34,7 +35,7 @@ public class  MainController {
         return usuarioLogado;
     }
 
-
+    public static ArrayList<Estoque> getEstoques() { return estoques; }
 
     public static ArrayList<Fornecedor> getFornecedores() {
         return fornecedores;
@@ -63,6 +64,8 @@ public class  MainController {
             compras.add((Compra) o);
         else if(o instanceof Cliente)
             clientes.add((Cliente) o);
+        else if(o instanceof  Estoque)
+            estoques.add((Estoque) o);
     }
 
     public static boolean logar(String email, String senha) throws Exception{
@@ -121,6 +124,7 @@ public class  MainController {
         saveToFile(compras, "compras");
         saveToFile(fornecedores, "fornecedores");
         saveToFile(clientes, "clientes");
+        saveToFile(estoques, "estoques");
         saveToFile(flores, "flores");
     }
 
@@ -141,6 +145,7 @@ public class  MainController {
             compras = (ArrayList<Compra>) loadFromFile("compras");
             fornecedores = (ArrayList<Fornecedor>) loadFromFile("fornecedores");
             clientes = (ArrayList<Cliente>) loadFromFile("clientes");
+            estoques = (ArrayList<Estoque>) loadFromFile("estoques");
             flores = (ArrayList<Flor>) loadFromFile("flores");
         }catch (ClassCastException e){
             System.out.println("Class cast error");
