@@ -17,6 +17,7 @@ public class Cliente implements ActionListener {
     private JButton enviarButton;
     private JButton cancelarButton;
     private JPanel panel;
+    private JTextField estadoCivil;
     private Model.Cliente cliente;
 
     public JPanel getPanel() {
@@ -31,15 +32,17 @@ public class Cliente implements ActionListener {
                 String nome = this.nome.getText();
                 String telefone = this.telefone.getText();
                 String profissao = this.profissao.getText();
-                if (cpf.equals("") || nome.equals("") || telefone.equals("") || profissao.equals(""))
+                String estadoCivil = this.estadoCivil.getText();
+                if (cpf.equals("") || nome.equals("") || telefone.equals("") || profissao.equals("") || estadoCivil.equals(""))
                     throw new Exception("Todos os campos devem ser preenchidos!");
                 if (this.cliente != null) { // editar
                     this.cliente.setCpf(cpf);
                     this.cliente.setNome(nome);
                     this.cliente.setTelefone(telefone);
                     this.cliente.setProfissao(profissao);
+                    this.cliente.setEstadoCivil(estadoCivil);
                 } else { //criar
-                    MainController.addToArrayList(new Model.Cliente(cpf, nome, telefone, profissao));
+                    MainController.addToArrayList(new Model.Cliente(cpf, nome, telefone, profissao, estadoCivil));
                 }
                 JOptionPane.showMessageDialog(this.panel, "Criado/editado com sucesso!!!");
                 (HomeController.genericCRUDList).refreshPainelComponents();
@@ -73,6 +76,7 @@ public class Cliente implements ActionListener {
         this.nome.setText(cliente.getNome());
         this.profissao.setText(cliente.getProfissao());
         this.telefone.setText(cliente.getTelefone());
+        this.estadoCivil.setText((cliente.getEstadoCivil()));
     }
 
     private void createUIComponents() {
@@ -95,7 +99,7 @@ public class Cliente implements ActionListener {
     private void $$$setupUI$$$() {
         createUIComponents();
         panel = new JPanel();
-        panel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(6, 3, new Insets(0, 0, 0, 0), -1, -1));
+        panel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(7, 3, new Insets(0, 0, 0, 0), -1, -1));
         final JLabel label1 = new JLabel();
         label1.setText("Cliente");
         panel.add(label1, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -119,10 +123,15 @@ public class Cliente implements ActionListener {
         panel.add(profissao, new com.intellij.uiDesigner.core.GridConstraints(4, 1, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         enviarButton = new JButton();
         enviarButton.setText("Enviar");
-        panel.add(enviarButton, new com.intellij.uiDesigner.core.GridConstraints(5, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel.add(enviarButton, new com.intellij.uiDesigner.core.GridConstraints(6, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         cancelarButton = new JButton();
         cancelarButton.setText("Cancelar");
-        panel.add(cancelarButton, new com.intellij.uiDesigner.core.GridConstraints(5, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel.add(cancelarButton, new com.intellij.uiDesigner.core.GridConstraints(6, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final JLabel label6 = new JLabel();
+        label6.setText("Est. Civil");
+        panel.add(label6, new com.intellij.uiDesigner.core.GridConstraints(5, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        estadoCivil = new JTextField();
+        panel.add(estadoCivil, new com.intellij.uiDesigner.core.GridConstraints(5, 1, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
     }
 
     /**
@@ -131,4 +140,5 @@ public class Cliente implements ActionListener {
     public JComponent $$$getRootComponent$$$() {
         return panel;
     }
+
 }

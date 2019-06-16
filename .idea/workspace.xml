@@ -9,17 +9,11 @@
     <list default="true" id="de282a43-3040-472c-b580-46b189b10c75" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/SGF_jar/SGF.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SGF_jar/SGF.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SGF/Model/Fornecedor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SGF/Model/Fornecedor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SGF/View/CreateUpdate/Flor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SGF/View/CreateUpdate/Flor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SGF/View/CreateUpdate/Fornecedor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SGF/View/CreateUpdate/Fornecedor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SGF/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SGF/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SGF/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SGF/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SGF/com/intellij/uiDesigner/core/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SGF/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SGF/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SGF/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Fornecedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Fornecedor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/CreateUpdate/Flor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CreateUpdate/Flor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/CreateUpdate/Fornecedor.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CreateUpdate/Fornecedor.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/CreateUpdate/Fornecedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CreateUpdate/Fornecedor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SGF/Model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SGF/Model/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SGF/View/CreateUpdate/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SGF/View/CreateUpdate/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/CreateUpdate/Cliente.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CreateUpdate/Cliente.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/CreateUpdate/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CreateUpdate/Cliente.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,49 +22,22 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Fornecedor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="e#485#486#0" expanded="true" />
-                <element signature="e#514#515#0" expanded="true" />
-                <element signature="e#558#559#0" expanded="true" />
-                <element signature="e#594#595#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/View/CreateUpdate/Fornecedor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8">
-              <caret line="81" column="4" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
-              <folding>
-                <element signature="e#538#539#0" expanded="true" />
-                <element signature="e#566#567#0" expanded="true" />
-                <element signature="method#$$$setupUI$$$#0;class#Fornecedor#0" expanded="true" />
-                <element signature="e#7513#7514#0" expanded="true" />
-                <element signature="e#7541#7542#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/CreateUpdate/Fornecedor.form">
-          <provider selected="true" editor-type-id="ui-designer" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Cliente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+            <state relative-caret-position="238">
+              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+              <folding>
+                <element signature="e#460#461#0" expanded="true" />
+                <element signature="e#514#515#0" expanded="true" />
+                <element signature="e#560#561#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,10 +45,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/CreateUpdate/Cliente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+            <state relative-caret-position="1275">
+              <caret line="84" column="88" selection-start-line="84" selection-start-column="88" selection-end-line="84" selection-end-column="88" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View/CreateUpdate/Cliente.form">
+          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
     </leaf>
@@ -131,9 +103,7 @@
         <option value="$PROJECT_DIR$/src/View/GenericCRUDList.form" />
         <option value="$PROJECT_DIR$/src/Controller/HomeController.java" />
         <option value="$PROJECT_DIR$/src/View/GenericCRUDList.java" />
-        <option value="$PROJECT_DIR$/src/View/CreateUpdate/Cliente.form" />
         <option value="$PROJECT_DIR$/src/View/CreateUpdate/Flor.form" />
-        <option value="$PROJECT_DIR$/src/Model/Cliente.java" />
         <option value="$PROJECT_DIR$/src/Model/Funcionario.java" />
         <option value="$PROJECT_DIR$/src/Model/Pessoa.java" />
         <option value="$PROJECT_DIR$/src/View/Home.form" />
@@ -142,7 +112,6 @@
         <option value="$PROJECT_DIR$/src/View/CreateUpdate/Compra.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/View/Cadastro.java" />
-        <option value="$PROJECT_DIR$/src/View/CreateUpdate/Cliente.java" />
         <option value="$PROJECT_DIR$/sgf.xml" />
         <option value="$PROJECT_DIR$/sgf.properties" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -155,6 +124,9 @@
         <option value="$PROJECT_DIR$/src/Model/Fornecedor.java" />
         <option value="$PROJECT_DIR$/src/View/CreateUpdate/Fornecedor.java" />
         <option value="$PROJECT_DIR$/src/View/CreateUpdate/Fornecedor.form" />
+        <option value="$PROJECT_DIR$/src/Model/Cliente.java" />
+        <option value="$PROJECT_DIR$/src/View/CreateUpdate/Cliente.java" />
+        <option value="$PROJECT_DIR$/src/View/CreateUpdate/Cliente.form" />
       </list>
     </option>
   </component>
@@ -206,22 +178,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
               <item name="CreateUpdate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="floriculturaPLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="floriculturaPLP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="CreateUpdate" type="462c0819:PsiDirectoryNode" />
-              <item name="Cliente" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="floriculturaPLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="floriculturaPLP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="CreateUpdate" type="462c0819:PsiDirectoryNode" />
-              <item name="Compra" type="e9f4de52:FormNode" />
             </path>
             <path>
               <item name="floriculturaPLP" type="b2602c69:ProjectViewProjectNode" />
@@ -347,12 +303,12 @@
       <workItem from="1560568607896" duration="4517000" />
       <workItem from="1560630484828" duration="2885000" />
       <workItem from="1560650299266" duration="3953000" />
-      <workItem from="1560656194978" duration="488000" />
+      <workItem from="1560656194978" duration="1324000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102769000" />
+    <option name="totallyTimeSpent" value="103605000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -503,9 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/CreateUpdate/Cliente.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ant/sgf.xml" />
     <entry file="file://$PROJECT_DIR$/sgf.xml" />
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -650,20 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/CreateUpdate/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Fornecedor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -677,22 +616,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/CreateUpdate/Fornecedor.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/CreateUpdate/Fornecedor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="81" column="4" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
+        <state relative-caret-position="136">
+          <caret line="81" column="7" lean-forward="true" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
           <folding>
             <element signature="e#538#539#0" expanded="true" />
             <element signature="e#566#567#0" expanded="true" />
-            <element signature="method#$$$setupUI$$$#0;class#Fornecedor#0" expanded="true" />
             <element signature="e#7513#7514#0" expanded="true" />
             <element signature="e#7541#7542#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/CreateUpdate/Fornecedor.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding>
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/CreateUpdate/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="84" column="88" selection-start-line="84" selection-start-column="88" selection-end-line="84" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/CreateUpdate/Cliente.form">
+      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
   </component>
   <component name="masterDetails">
