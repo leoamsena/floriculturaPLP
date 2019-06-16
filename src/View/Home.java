@@ -18,7 +18,6 @@ public class Home implements ActionListener {
     private JButton fornecedoresButton;
     private JButton comprasButton;
     private JButton saveBtn;
-    private JButton loadBtn;
 
 
     public JDialog getDialog() {
@@ -38,9 +37,6 @@ public class Home implements ActionListener {
             } else if (e.getSource() == this.saveBtn) {
                 MainController.save();
                 JOptionPane.showMessageDialog(this.panel, "Salvo com sucesso!");
-            } else if (e.getSource() == this.loadBtn) {
-                MainController.load();
-                JOptionPane.showMessageDialog(this.panel, "Carregado com sucesso!");
             }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this.panel, ex.getMessage());
@@ -58,7 +54,6 @@ public class Home implements ActionListener {
         this.clientesButton.addActionListener(this);
         this.fornecedoresButton.addActionListener(this);
         this.saveBtn.addActionListener(this);
-        this.loadBtn.addActionListener(this);
     }
 
     {
@@ -77,7 +72,7 @@ public class Home implements ActionListener {
      */
     private void $$$setupUI$$$() {
         panel = new JPanel();
-        panel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(8, 1, new Insets(100, 100, 100, 100), -1, -1));
+        panel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(7, 1, new Insets(100, 100, 100, 100), -1, -1));
         homeLabel = new JLabel();
         Font homeLabelFont = this.$$$getFont$$$("Lucida Sans Typewriter", -1, 36, homeLabel.getFont());
         if (homeLabelFont != null) homeLabel.setFont(homeLabelFont);
@@ -101,9 +96,6 @@ public class Home implements ActionListener {
         saveBtn = new JButton();
         saveBtn.setText("Salvar no arquivo");
         panel.add(saveBtn, new com.intellij.uiDesigner.core.GridConstraints(6, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        loadBtn = new JButton();
-        loadBtn.setText("Carregar do arquivo");
-        panel.add(loadBtn, new com.intellij.uiDesigner.core.GridConstraints(7, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer1 = new com.intellij.uiDesigner.core.Spacer();
         panel.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(5, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(50, 50), null, null, 0, false));
     }
@@ -133,4 +125,5 @@ public class Home implements ActionListener {
     public JComponent $$$getRootComponent$$$() {
         return panel;
     }
+
 }

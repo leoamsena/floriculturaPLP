@@ -13,32 +13,35 @@ public class Main implements ActionListener {
     private JPasswordField senha;
     private JButton login;
     private JButton cadastrar;
+    private JButton loadBtn;
 
     public JPanel getMainPanel() {
         return mainPanel;
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == this.login) { //logar
-            try {
+        try {
+            if (e.getSource() == this.login) { //logar
                 String email = this.email.getText();
                 String senha = new String(this.senha.getPassword());
                 if (email.equals("") || senha.equals(""))
                     throw new Exception("Senha e/ou email em branco!");
                 MainController.logar(email, senha);
-
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this.mainPanel, ex.getMessage(), "Erro!", JOptionPane.ERROR_MESSAGE);
+            } else if (e.getSource() == this.cadastrar) { //cadastrar
+                MainController.cadastrar();
+            } else if (e.getSource() == this.loadBtn) {
+                MainController.load();
+                JOptionPane.showMessageDialog(this.mainPanel, "Carregado com sucesso!");
             }
-        } else if (e.getSource() == this.cadastrar) { //cadastrar
-            MainController.cadastrar();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this.mainPanel, ex.getMessage(), "Erro!", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     public Main() {
-
         this.login.addActionListener(this);
         this.cadastrar.addActionListener(this);
+        this.loadBtn.addActionListener(this);
     }
 
 
@@ -64,7 +67,7 @@ public class Main implements ActionListener {
      */
     private void $$$setupUI$$$() {
         mainPanel = new JPanel();
-        mainPanel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(5, 1, new Insets(200, 200, 200, 200), -1, -1));
+        mainPanel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(7, 1, new Insets(200, 200, 200, 200), -1, -1));
         mainPanel.setAlignmentX(0.5f);
         mainPanel.setAutoscrolls(true);
         mainPanel.setInheritsPopupMenu(true);
@@ -101,6 +104,11 @@ public class Main implements ActionListener {
         if (label2Font != null) label2.setFont(label2Font);
         label2.setText("SISTEMA DE GERÊNCIA DE FLORICULTURA");
         mainPanel.add(label2, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(400, -1), new Dimension(400, -1), new Dimension(400, -1), 0, false));
+        loadBtn = new JButton();
+        loadBtn.setText("Carregar do arquivo");
+        mainPanel.add(loadBtn, new com.intellij.uiDesigner.core.GridConstraints(6, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final com.intellij.uiDesigner.core.Spacer spacer1 = new com.intellij.uiDesigner.core.Spacer();
+        mainPanel.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(5, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(50, 50), null, null, 0, false));
     }
 
     /**
@@ -128,4 +136,5 @@ public class Main implements ActionListener {
     public JComponent $$$getRootComponent$$$() {
         return mainPanel;
     }
+
 }

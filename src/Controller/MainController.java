@@ -15,6 +15,8 @@ import java.util.ArrayList;
 
 public class  MainController {
     private static JFrame frame;
+
+    //banco de dados em tempo de aplicação
     private static ArrayList<Funcionario> funcionarios = new ArrayList<>();
     private static ArrayList<Compra> compras = new ArrayList<>();
     private static ArrayList<Fornecedor> fornecedores = new ArrayList<>();
@@ -53,6 +55,8 @@ public class  MainController {
         return frame;
     }
 
+
+    // cadastro de novo objeto e adiciona o objeto no arrayList correto
     public static void addToArrayList(Object o){
         if(o instanceof Funcionario)
             funcionarios.add((Funcionario) o);
@@ -68,6 +72,7 @@ public class  MainController {
             estoques.add((Estoque) o);
     }
 
+    //procura email e senha nos funcionarios cadastrados
     public static boolean logar(String email, String senha) throws Exception{
         for(Funcionario f: funcionarios){
             if(f.getEmail().equals(email) && f.getSenha().equals(senha)){ //loguei
@@ -80,7 +85,6 @@ public class  MainController {
 
         }
         throw new Exception("Email e/ou senha inválido(s)!");
-
     }
 
     public static void main(String[] args) {
@@ -130,7 +134,6 @@ public class  MainController {
 
 
     private static Object loadFromFile(String name) throws Exception{
-
         FileInputStream fis = new FileInputStream("arqs/"+name+".srda");
         ObjectInputStream ois = new ObjectInputStream(fis);
         Object res = ois.readObject();
@@ -138,6 +141,7 @@ public class  MainController {
 
         return res;
     }
+
 
     public static void load() throws Exception{
         try {

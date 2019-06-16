@@ -27,13 +27,6 @@ public class Estoque implements Serializable {
         this.qtdEmEstoque = qtdEmEstoque;
     }
 
-    public void diminuiEstoque(int qtd){
-        this.qtdEmEstoque -= qtd;
-    }
-    public void diminuiEstoque(){
-        this.qtdEmEstoque--;
-    }
-
     @Override
     public String toString() {
         return this.flor.getCodigo()+" - "+this.qtdEmEstoque;

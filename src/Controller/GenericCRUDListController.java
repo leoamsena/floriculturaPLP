@@ -29,9 +29,6 @@ public class GenericCRUDListController {
         }
     }
 
-    public static JDialog getCrud() {
-        return crud;
-    }
     public static void openCreate(Class<?> clazz){
         crud = new JDialog(HomeController.getListDialog(),"Criar: ",JDialog.ModalityType.DOCUMENT_MODAL);
         if (clazz == Fornecedor.class) {
@@ -42,8 +39,6 @@ public class GenericCRUDListController {
             crud.setContentPane(new View.CreateUpdate.Cliente().getPanel());
         } else if (clazz == Flor.class) {
             crud.setContentPane(new View.CreateUpdate.Flor().getPanel());
-        } else if (clazz == Funcionario.class) {
-
         }
         crud.setResizable(false);
         crud.setSize(new Dimension(500,500));
@@ -60,9 +55,7 @@ public class GenericCRUDListController {
             crud.setContentPane(new View.CreateUpdate.Cliente((Cliente) o).getPanel());
         } else if (o instanceof Flor) {
             crud.setContentPane(new View.CreateUpdate.Flor((Flor) o).getPanel());
-        } else if (o instanceof Funcionario) {
-
-        }
+        } 
         crud.setResizable(false);
         crud.setSize(new Dimension(500,500));
         crud.setVisible(true);

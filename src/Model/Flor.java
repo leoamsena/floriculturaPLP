@@ -17,7 +17,6 @@ public class Flor implements Serializable {
         this.cor = cor;
         this.valorIndividual = valorIndividual;
         this.fornecedor = fornecedor;
-
     }
 
     public Fornecedor getFornecedor() {

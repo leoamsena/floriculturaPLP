@@ -7,10 +7,6 @@ public abstract class Pessoa implements Serializable {
     private String nome;
     private String telefone;
 
-    public Pessoa() {
-
-    }
-
     public Pessoa(String cpf, String nome, String telefone) {
         this.cpf = cpf;
         this.nome = nome;
