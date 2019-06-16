@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 
 public class Fornecedor implements ActionListener {
     private JTextField nome;
+    private JTextField cidade;
     private JFormattedTextField cnpj;
     private JButton cancelarButton;
     private JButton enviarButton1;
@@ -27,13 +28,15 @@ public class Fornecedor implements ActionListener {
             try {
                 String cnpj = this.cnpj.getText();
                 String nome = this.nome.getText();
-                if (cnpj.equals("") || nome.equals(""))
+                String cidade = this.cidade.getText();
+                if (cnpj.equals("") || nome.equals("") || cidade.equals(""))
                     throw new Exception("CPNJ e/ou nome devem ser preenchidos!");
                 if (this.fornecedor != null) { // editar
                     this.fornecedor.setCnpj(cnpj);
                     this.fornecedor.setNome(nome);
+                    this.fornecedor.setCidade(cidade);
                 } else { //criar
-                    MainController.addToArrayList(new Model.Fornecedor(cnpj, nome));
+                    MainController.addToArrayList(new Model.Fornecedor(cnpj, nome, cidade));
                 }
                 JOptionPane.showMessageDialog(this.panel, "Criado/editado com sucesso!!!");
                 (HomeController.genericCRUDList).refreshPainelComponents();
@@ -64,6 +67,7 @@ public class Fornecedor implements ActionListener {
         this.fornecedor = fornecedor;
         this.cnpj.setText(fornecedor.getCnpj());
         this.nome.setText(fornecedor.getNome());
+        this.cidade.setText(fornecedor.getCidade());
     }
 
     private void createUIComponents() {
@@ -85,7 +89,7 @@ public class Fornecedor implements ActionListener {
     private void $$$setupUI$$$() {
         createUIComponents();
         panel = new JPanel();
-        panel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(4, 3, new Insets(0, 0, 0, 0), -1, -1));
+        panel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(5, 3, new Insets(0, 0, 0, 0), -1, -1));
         final JLabel label1 = new JLabel();
         label1.setText("CNPJ");
         panel.add(label1, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -101,10 +105,15 @@ public class Fornecedor implements ActionListener {
         panel.add(cnpj, new com.intellij.uiDesigner.core.GridConstraints(1, 1, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         cancelarButton = new JButton();
         cancelarButton.setText("Cancelar");
-        panel.add(cancelarButton, new com.intellij.uiDesigner.core.GridConstraints(3, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel.add(cancelarButton, new com.intellij.uiDesigner.core.GridConstraints(4, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         enviarButton1 = new JButton();
         enviarButton1.setText("Enviar");
-        panel.add(enviarButton1, new com.intellij.uiDesigner.core.GridConstraints(3, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel.add(enviarButton1, new com.intellij.uiDesigner.core.GridConstraints(4, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        cidade = new JTextField();
+        panel.add(cidade, new com.intellij.uiDesigner.core.GridConstraints(3, 1, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        final JLabel label4 = new JLabel();
+        label4.setText("Cidade");
+        panel.add(label4, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**
@@ -113,4 +122,5 @@ public class Fornecedor implements ActionListener {
     public JComponent $$$getRootComponent$$$() {
         return panel;
     }
+
 }

@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class Fornecedor implements Serializable {
     private String cnpj;
     private String nome;
+    private String cidade;
 
     public Fornecedor() {
     }
@@ -14,9 +15,18 @@ public class Fornecedor implements Serializable {
         return this.cnpj+" - "+this.nome;
     }
 
-    public Fornecedor(String cnpj, String nome) {
+    public Fornecedor(String cnpj, String nome, String cidade) {
         this.cnpj = cnpj;
         this.nome = nome;
+        this.cidade = cidade;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
     public String getCnpj() {

@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class Flor implements ActionListener {
-    private Model.Estoque estoque;
+    private Estoque estoque;
     private JTextField nome;
     private JTextField qtd;
     private JPanel panel;
@@ -48,7 +48,7 @@ public class Flor implements ActionListener {
                 } else { //criar
                     Model.Flor f = new Model.Flor(nome, cor, valor, fornecedor);
                     MainController.addToArrayList(f);
-                    MainController.addToArrayList(new Model.Estoque(f, qtd));
+                    MainController.addToArrayList(new Estoque(f, qtd));
                 }
                 JOptionPane.showMessageDialog(this.panel, "Criado/editado com sucesso!!!");
                 (HomeController.genericCRUDList).refreshPainelComponents();
@@ -76,7 +76,7 @@ public class Flor implements ActionListener {
         this.cancelarButton.addActionListener(this);
 
         ArrayList<Estoque> alEstoque = MainController.getEstoques();
-        for(int i=0;i< alEstoque.size();i++) {
+        for (int i = 0; i < alEstoque.size(); i++) {
             Estoque temp = alEstoque.get(i);
             if (temp.getFlor().getCodigo() == flor.getCodigo()) this.estoque = temp;
         }
@@ -149,4 +149,5 @@ public class Flor implements ActionListener {
     public JComponent $$$getRootComponent$$$() {
         return panel;
     }
+
 }
